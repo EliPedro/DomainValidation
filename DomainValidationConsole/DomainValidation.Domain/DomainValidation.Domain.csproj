@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{49EC189A-6912-4A9E-8A37-FA64EB895D5E}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>DomainValidationConsole</RootNamespace>
-    <AssemblyName>DomainValidationConsole</AssemblyName>
+    <ProjectGuid>{EE76661E-69BB-48BA-B2FB-B6E005A20E15}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DomainValidation.Domain</RootNamespace>
+    <AssemblyName>DomainValidation.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,20 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Cliente\Cliente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DomainValidation.Domain\DomainValidation.Domain.csproj">
-      <Project>{EE76661E-69BB-48BA-B2FB-B6E005A20E15}</Project>
-      <Name>DomainValidation.Domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DomainValidation.Infra.Common\DomainValidation.Infra.Common.csproj">
       <Project>{2A225416-3BA2-4FC7-870A-A3D36ECB0EA8}</Project>
       <Name>DomainValidation.Infra.Common</Name>

@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DomainValidation.Domain.Cliente;
+using DomainValidation.Infra.Common.Validation;
+using System;
 
 namespace DomainValidationConsole
 {
@@ -10,6 +8,17 @@ namespace DomainValidationConsole
     {
         static void Main(string[] args)
         {
+            // Criando um novo
+            var cliente = new Cliente("", 0);
+            cliente.IsValid();
+
+            if(DomainValidationManagement.HasErros)
+            {
+                foreach (var item in DomainValidationManagement.GetAll())
+                    Console.WriteLine(item.Message);
+            }
+
+            Console.ReadKey();
         }
     }
 }
