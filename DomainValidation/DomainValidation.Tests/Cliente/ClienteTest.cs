@@ -8,7 +8,7 @@ namespace DomainValidation.Tests
         [Fact]
         public void Cliente_EhValido_True()
         {
-            var cliente = new Cliente("000.000.000.00","12345");
+            var cliente = new Cliente("000","000");
 
             Assert.True(cliente.EhValido());
 

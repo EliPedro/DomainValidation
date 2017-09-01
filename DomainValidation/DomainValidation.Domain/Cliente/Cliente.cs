@@ -15,14 +15,14 @@ namespace DomainValidation.Domain.Cliente
         public bool EhValido()
         {
 
-            if (_PassWord.Length < 6)
+            if (_PassWord.Length == 3)
                 ClienteValidationManagement.Add(new ClienteValidation("A Senha deve ter no mínimo 6 caracteres..."));
 
-            if (_Cpf.Length > 10)
+            if (_Cpf.Length == 3)
                 ClienteValidationManagement.Add(new ClienteValidation("CPF Inválido..."));
 
-            if (ClienteValidationManagement.Erros.Count == 0) return true;
-            
+            if (ClienteValidationManagement.Erros == null) return true;
+
             return false;
         }
 
