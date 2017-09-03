@@ -9,11 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainValidation.Domain", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3E07C823-3FB4-485F-A49E-11D65F0DDC59}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{87CF8BFA-A0AD-4982-B75D-0B61A79C31DC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainValidation.UI", "DomainValidation.UI\DomainValidation.UI.csproj", "{836D3B8C-9622-4B09-BA9D-B42849948657}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainValidation.Tests", "DomainValidation.Tests\DomainValidation.Tests.csproj", "{C42C6882-85FA-4906-AC84-DFB0931611E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplication", "Aplication", "{22042958-EF7F-4CEB-9A9C-26321E263ABB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainValidation.Aplication", "DomainValidation.Aplication\DomainValidation.Aplication.csproj", "{D2D37C57-8EAE-4475-96C4-1246E291DF90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,21 +25,21 @@ Global
 		{F5811D19-7156-45F3-8526-C06B5AE98A50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5811D19-7156-45F3-8526-C06B5AE98A50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5811D19-7156-45F3-8526-C06B5AE98A50}.Release|Any CPU.Build.0 = Release|Any CPU
-		{836D3B8C-9622-4B09-BA9D-B42849948657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{836D3B8C-9622-4B09-BA9D-B42849948657}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{836D3B8C-9622-4B09-BA9D-B42849948657}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{836D3B8C-9622-4B09-BA9D-B42849948657}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C42C6882-85FA-4906-AC84-DFB0931611E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C42C6882-85FA-4906-AC84-DFB0931611E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C42C6882-85FA-4906-AC84-DFB0931611E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C42C6882-85FA-4906-AC84-DFB0931611E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2D37C57-8EAE-4475-96C4-1246E291DF90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2D37C57-8EAE-4475-96C4-1246E291DF90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2D37C57-8EAE-4475-96C4-1246E291DF90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2D37C57-8EAE-4475-96C4-1246E291DF90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F5811D19-7156-45F3-8526-C06B5AE98A50} = {0E232163-35E2-4678-ADEC-FEEB15B57847}
-		{836D3B8C-9622-4B09-BA9D-B42849948657} = {87CF8BFA-A0AD-4982-B75D-0B61A79C31DC}
 		{C42C6882-85FA-4906-AC84-DFB0931611E8} = {3E07C823-3FB4-485F-A49E-11D65F0DDC59}
+		{D2D37C57-8EAE-4475-96C4-1246E291DF90} = {22042958-EF7F-4CEB-9A9C-26321E263ABB}
 	EndGlobalSection
 EndGlobal

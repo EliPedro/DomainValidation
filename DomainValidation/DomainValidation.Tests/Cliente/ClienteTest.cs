@@ -1,4 +1,5 @@
 ﻿using Xunit;
+
 using DomainValidation.Domain.Cliente;
 
 namespace DomainValidation.Tests
@@ -8,11 +9,10 @@ namespace DomainValidation.Tests
         [Fact]
         public void Cliente_EhValido_True()
         {
-            var cliente = new Cliente("000","000");
+            var cliente = new Cliente("00","00");
 
             Assert.True(cliente.EhValido());
-
-
+            
         }
     }
 }
