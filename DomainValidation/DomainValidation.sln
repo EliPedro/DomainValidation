@@ -7,8 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{0E2321
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{3E07C823-3FB4-485F-A49E-11D65F0DDC59}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplication", "Aplication", "{22042958-EF7F-4CEB-9A9C-26321E263ABB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainValidation.Test", "DomainValidation.Test\DomainValidation.Test.csproj", "{B2E1EE0E-32AF-4365-BC07-1E5E96788E48}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainValidation.Domain", "DomainValidation.Domain\DomainValidation.Domain.csproj", "{9FF8D56E-DB35-4CB3-8FC5-3F884FC577C7}"

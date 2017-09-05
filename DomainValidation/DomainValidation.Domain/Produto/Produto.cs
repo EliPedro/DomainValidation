@@ -4,10 +4,10 @@ namespace DomainValidation.Domain.Produto
 {
     public class Produto
     {
-        private int Id { get; set; }
-        private string Nome { get; set; }
-        private string Descricao { get; set; }
-        private decimal Preco { get; set; }
+        public int Id { get; private set; }
+        public string Nome { get; private set; }
+        public string Descricao { get; private set; }
+        public decimal Preco { get; private set; }
 
         public Produto(int id, string nome, string descricao, decimal preco)
         {
@@ -32,5 +32,6 @@ namespace DomainValidation.Domain.Produto
             
             return true;
         }
+        
     }
 }

@@ -6,7 +6,12 @@ namespace DomainValidation.Domain.Produto.Services.Service
     {
         public string VerificaPrecoProduto(Produto p)
         {
-            throw new System.Exception();
+            if (p.Preco > 100)
+                return "Produto caro!";
+            else if (p.Preco <= 100 && p.Preco > 40)
+                return "Produto na média de preço!";
+            else
+                return "Produto barato!";
         }
     }
 }
