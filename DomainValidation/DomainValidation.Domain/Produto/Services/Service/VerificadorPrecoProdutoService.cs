@@ -4,11 +4,17 @@ namespace DomainValidation.Domain.Produto.Services.Service
 {
     public class VerificadorPrecoProdutoService : IVerificadorPrecoProdutoService
     {
-        public string VerificaPrecoProduto(Produto p)
+        private readonly Produto _produto;
+        public VerificadorPrecoProdutoService(Produto produto)
         {
-            if (p.Preco > 100)
+            _produto = produto;
+
+        }
+        public string VerificaPrecoProduto()
+        {
+            if (_produto.Preco > 100)
                 return "Produto caro!";
-            else if (p.Preco <= 100 && p.Preco > 40)
+            else if (_produto.Preco <= 100 && _produto.Preco > 40)
                 return "Produto na média de preço!";
             else
                 return "Produto barato!";

@@ -2,6 +2,6 @@
 {
     public interface IVerificadorPrecoProdutoService
     {
-        string VerificaPrecoProduto(Produto p);
+        string VerificaPrecoProduto();
     }
 }
