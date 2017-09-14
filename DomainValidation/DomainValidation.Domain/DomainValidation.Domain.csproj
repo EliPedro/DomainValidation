@@ -31,8 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Produto\Produto.cs" />
-    <Compile Include="Produto\Services\Interfaces\IVerificadorPrecoProdutoService.cs" />
-    <Compile Include="Produto\Services\Service\VerificadorPrecoProdutoService.cs" />
+    <Compile Include="Produto\Services\Interfaces\IVerificaPrecoProdutoService.cs" />
     <Compile Include="Produto\Validation\ValidationProduto.cs" />
     <Compile Include="Produto\Validation\ValidationProdutoManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

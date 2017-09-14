@@ -1,6 +1,5 @@
 ﻿using DomainValidation.Domain.Produto;
-using System.Collections;
-using System.Collections.Generic;
+using System;
 
 namespace DomainValidation.Test.TestDataBuilder
 {
@@ -8,7 +7,7 @@ namespace DomainValidation.Test.TestDataBuilder
     {
         public Produto CriarProduto()
         {
-            return new Produto(1, "Notebook", "Del", 20);
+            return new Produto(Guid.NewGuid(), "Notebook", "Del", 20);
         }       
     }
 }

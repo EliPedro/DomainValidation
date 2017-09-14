@@ -1,15 +1,16 @@
 ﻿using DomainValidation.Domain.Produto.Validation;
+using System;
 
 namespace DomainValidation.Domain.Produto
 {
     public class Produto
     {
-        public int Id { get; private set; }
+        public Guid Id { get; private set; }
         public string Nome { get; private set; }
         public string Descricao { get; private set; }
         public decimal Preco { get; private set; }
 
-        public Produto(int id, string nome, string descricao, decimal preco)
+        public Produto(Guid id, string nome, string descricao, decimal preco)
         {
             Id = id;
             Nome = nome;

@@ -1,52 +1,56 @@
 ﻿using DomainValidation.Domain.Produto;
-using NUnit.Framework;
 using Moq;
 using DomainValidation.Domain.Produto.Services.Interfaces;
-using DomainValidation.Domain.Produto.Services.Service;
 using DomainValidation.Test.TestDataBuilder;
 using System;
+using Xunit;
+using Bogus;
+using static Bogus.DataSets.Name;
 
 namespace DomainValidation.Test.ProdutoTest
 {
 
-    [TestFixture]
     public class ProdutoTest
     {
-        private ProdutoBuilder ProdutoBuilder { get; set; }
+        private ProdutoBuilder ProdutoBuilder = new ProdutoBuilder();
 
-        [SetUp]
-        public void Inicialization()
-        {
-            this.ProdutoBuilder = new ProdutoBuilder();
-        }
-        
-        [Test]
-        [Category("Produto")]
+        [Fact]
         public void Produto_EhValido_True()
-        {          
-            Assert.IsTrue(ProdutoBuilder.CriarProduto().EhValido());
+        {
+            Assert.True(ProdutoBuilder.CriarProduto().EhValido());
         }
 
-        [Test]
-        [Category("Produto")]
+        [Fact]
         public void Produto_VerificaPrecoProduto_ProdutoComMenorPreco()
         {
             // arrange
             var produto = ProdutoBuilder.CriarProduto();
 
-            Mock<IVerificadorPrecoProdutoService> mock = new Mock<IVerificadorPrecoProdutoService>();
-            mock.Setup(m => m.VerificaPrecoProduto()).Returns("Produto barato!");
-            VerificadorPrecoProdutoService verif = new VerificadorPrecoProdutoService(produto);
-
-            // act
-            var resultadoEsperado = mock.Object.VerificaPrecoProduto();
-            var resultado = verif.VerificaPrecoProduto();
+            var preco = new Mock<IVerificaPrecoProdutoService>();
+            preco.Setup(m => m.VerificaPrecoProduto(produto.Id)).Returns(produto);
             
-            Console.WriteLine("Expected :" + resultado);
-            Console.WriteLine("Reality: " + resultadoEsperado);
+            // act
+            var resultado = preco.Object.VerificaPrecoProduto(produto.Id);
+            
+
+            Console.WriteLine("Expected :" + produto);
+            Console.WriteLine("Reality: " + resultado);
 
             // assert
-            Assert.AreEqual(resultado,resultadoEsperado);
-       }
+            Assert.Equal(resultado, resultado);
+
+            preco.Verify(x => x.VerificaPrecoProduto(It.IsAny<Guid>()),Times.Once);
+        }
+
+        [Fact]
+        public void Produto_Lista_Teste()
+        {
+            // Bogus é um gerador de dados aleatórios
+            var produtoTest = new Faker<Produto>("pt-Br")
+                .CustomInstantiator(p => new Produto(Guid.NewGuid(),
+                p.Name.FirstName(Gender.Female),
+                p.Name.LastName(Gender.Female),
+                p.Random.Decimal())).Generate(10);
+        }
     }
 }
