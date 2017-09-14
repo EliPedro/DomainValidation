@@ -48,8 +48,8 @@ namespace DomainValidation.Test.ProdutoTest
             // Bogus é um gerador de dados aleatórios
             var produtoTest = new Faker<Produto>("pt-Br")
                 .CustomInstantiator(p => new Produto(Guid.NewGuid(),
-                p.Name.FirstName(Gender.Female),
-                p.Name.LastName(Gender.Female),
+                p.Commerce.Product(),
+                p.Commerce.ProductName(),
                 p.Random.Decimal())).Generate(10);
         }
     }
