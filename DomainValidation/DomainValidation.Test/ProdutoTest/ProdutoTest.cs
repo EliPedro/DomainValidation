@@ -16,6 +16,7 @@ namespace DomainValidation.Test.ProdutoTest
         private ProdutoBuilder ProdutoBuilder = new ProdutoBuilder();
 
         [Fact]
+
         public void Produto_EhValido_True()
         {
             Assert.True(ProdutoBuilder.CriarProduto().EhValido());
