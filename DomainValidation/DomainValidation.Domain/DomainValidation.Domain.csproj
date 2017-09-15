@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DomainValidation.Domain</RootNamespace>
     <AssemblyName>DomainValidation.Domain</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,6 +31,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Cliente\Cliente.cs" />
+    <Compile Include="Cliente\Interface\Repository\IClienteRepository.cs" />
+    <Compile Include="Cliente\Interface\Service\IClienteService.cs" />
+    <Compile Include="Cliente\Service\ClienteService.cs" />
     <Compile Include="Produto\Produto.cs" />
     <Compile Include="Produto\Services\Interfaces\IVerificaPrecoProdutoService.cs" />
     <Compile Include="Produto\Validation\ValidationProduto.cs" />

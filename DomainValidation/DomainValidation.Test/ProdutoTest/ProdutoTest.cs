@@ -6,6 +6,7 @@ using System;
 using Xunit;
 using Bogus;
 using static Bogus.DataSets.Name;
+using FluentAssertions;
 
 namespace DomainValidation.Test.ProdutoTest
 {
@@ -27,23 +28,23 @@ namespace DomainValidation.Test.ProdutoTest
             var produto = ProdutoBuilder.CriarProduto();
 
             var preco = new Mock<IVerificaPrecoProdutoService>();
-            preco.Setup(m => m.VerificaPrecoProduto(produto.Id)).Returns(produto);
-            
+            preco.Setup(p => p.VerificaPrecoProduto(produto.Id)).Returns(produto);
+
             // act
             var resultado = preco.Object.VerificaPrecoProduto(produto.Id);
             
-
-            Console.WriteLine("Expected :" + produto);
-            Console.WriteLine("Reality: " + resultado);
-
             // assert
             Assert.Equal(resultado, resultado);
+
+            // assert Fluent Assertions
+
+            resultado.Should().BeNull();
 
             preco.Verify(x => x.VerificaPrecoProduto(It.IsAny<Guid>()),Times.Once);
         }
 
         [Fact]
-        public void Produto_Lista_Teste()
+        public void Produto_Bogus_Lista()
         {
             // Bogus é um gerador de dados aleatórios
             var produtoTest = new Faker<Produto>("pt-Br")
@@ -51,6 +52,9 @@ namespace DomainValidation.Test.ProdutoTest
                 p.Commerce.Product(),
                 p.Commerce.ProductName(),
                 p.Random.Decimal())).Generate(10);
+
+            // assert Fluent Assertions
+            produtoTest.Should().HaveCount(c => c > 10);
         }
     }
 }
